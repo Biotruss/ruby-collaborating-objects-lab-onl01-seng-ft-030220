@@ -19,14 +19,11 @@ class Song
   
   def self.new_by_filename(filename)
     artist, song = filename.split(" - ")
-    new_song = self.new(song)      #creates new instance of a song 
-    new_song.artist_name = artist       #sets artist object to belong to the song 
+    new_song = self.new(song)      #creates new instance of a song from file that's passed
+    new_song.artist_name = artist       #
     new_song
   end 
   
-  def artist_name=(name)
-    self.artist = Artist.find_or_create_by_name(name)
-    artist.add_song(self)
-  end
+ 
     
 end
